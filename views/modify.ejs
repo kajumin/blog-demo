@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html class="zh-ch">
+<%- include('./public/head.ejs')%>
+<body>
+<%- include('./public/header.ejs')%>
+<section class="main floatfix">
+	<%- include('./public/aside.ejs')%>
+	<section class="main-articles">
+		<form action="/article/modify/<%= article.articleID %>" method="post" class="edit">
+			<div class="form-group">
+				<label for="title">标题</label>
+				<input type="text" name="title" value="<%= article.articleTitle %>">
+			</div>
+			<div class="text-group">
+				<label for="content">内容</label>
+				<textarea name="content"><%= article.articleContent %></textarea>
+			</div>
+			<p><input type="submit" name="" value="保存"></p>
+		</form>
+	</section>
+</section>
+<%- include('./public/footer.ejs')%>
+</body>
+</html>
